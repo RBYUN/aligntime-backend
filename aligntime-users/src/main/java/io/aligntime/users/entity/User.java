@@ -19,16 +19,16 @@ public class User {
     private UUID id;
 
     @Column(nullable = false, length = 25)
-    private String firstName;
+    private String first_name;
 
     @Column(nullable = false, length = 25)
-    private String lastName;
+    private String last_name;
 
     @Column(nullable = false, length = 255)
     private String email;
 
     @Column(nullable = false, length = 255)
-    private String passwordHash;
+    private String password_hash;
 
     @Column(nullable = false, length = 255)
     private String salt;
@@ -44,11 +44,11 @@ public class User {
 
     protected User() {}
 
-    public User(String firstName, String lastName, String email, String passwordHash, String salt) {
-        this.firstName = firstName.toLowerCase();
-        this.lastName = lastName.toLowerCase();
-        this.email = email.toLowerCase();
-        this.passwordHash = passwordHash;
+    public User(String first_name, String last_name, String email, String password_hash, String salt) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password_hash = password_hash;
         this.salt = salt;
     }
 
@@ -56,12 +56,12 @@ public class User {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLast_name() {
+        return last_name;
     }
 
     public String getEmail() {

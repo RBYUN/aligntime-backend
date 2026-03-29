@@ -50,8 +50,8 @@ public class UserService {
             String encodedHash = Base64.getEncoder().encodeToString(hash);
             String encodedSalt = Base64.getEncoder().encodeToString(salt);
             User newUser = new User(
-                    request.getFirstName(),
-                    request.getLastName(),
+                    request.getFirst_name(),
+                    request.getLast_name(),
                     request.getEmail(),
                     encodedHash,
                     encodedSalt

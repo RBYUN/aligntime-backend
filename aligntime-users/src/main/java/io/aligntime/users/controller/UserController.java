@@ -3,6 +3,7 @@ package io.aligntime.users.controller;
 import io.aligntime.users.dto.CreateUserRequest;
 import io.aligntime.users.dto.UserResponse;
 import io.aligntime.users.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserResponse> createUser(@RequestHeader("X-Request-ID") String requestId, @RequestBody CreateUserRequest request) {
+    public ResponseEntity<UserResponse> createUser(@RequestHeader("X-Request-ID") String requestId, @Valid @RequestBody CreateUserRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(request));
     }
 }
